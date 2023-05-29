@@ -2,7 +2,7 @@ name: Devops GapAnalysis
 
 on:
   push:
-    branches: [ "stage" ]
+    branches: [ "prueba" ]
     tags:
     - 'v*'
 
