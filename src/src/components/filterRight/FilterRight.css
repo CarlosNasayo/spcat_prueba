@@ -1,0 +1,70 @@
+.rotate-90{
+    transform: rotate(90deg)
+}
+
+.rotate-270{
+    transform: rotate(270deg)
+}
+.input{
+    border-radius: 10px;
+    height: 35px;
+    margin: 10px;
+    
+}
+input:target{
+   
+    border-color: red !important;
+}
+button{
+    border: none;
+
+}
+.icons{
+   
+}
+.p-destino{
+    visibility: hidden;
+}
+
+.icons:hover{
+    cursor: pointer;
+    visibility: visible;
+}
+.icons:hover + .p-destino{
+    visibility: visible;
+}
+.arrow-button{
+    position: absolute;
+   z-index: 5000;
+   top: 50%;
+   transition: right 0.3 ease;
+}
+.right-container{
+    position:absolute;
+    height: 90%;
+}
+/* .search{
+    border-radius: 7px;
+} */
+.route-title{
+margin-top: 10px;
+margin-left: 10px;
+}
+.search-icon{
+    padding-left: 10px;
+}
+.title-icon-container{
+    display: flex;
+    justify-content: space-between;
+}
+.icon-info{
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.row-destino{
+    --bs-gutter-x:0px !important;
+}
+.info{
+    cursor: pointer;
+}
