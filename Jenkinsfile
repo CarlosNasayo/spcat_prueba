@@ -69,22 +69,21 @@ pipeline {
                 }
             }
         } */
-        /* 
+        
         stage('Download latest release') {
             steps {
                 script {
                     sshCommand remote: remote, command: '''
                         # Download the latest release from GitHub
-                        cd ./api_SPCAT
+                        cd ./webapp_SPCAT
                         rm -rf releaseApi.zip
-                        curl -LOk https://github.com/victor-993/spcat_webapi/releases/latest/download/releaseApi.zip
-                        rm -rf api_actual
-                        unzip releaseApi.zip -d api_actual
+                        curl -LOk https://github.com/CarlosNasayo/spcat_prueba/releases/latest/download/releaseFront.zip
+                        unzip releaseApi.zip
                     '''
                 }
             }
         }
-         */
+        
         /* stage('Update dependencies') {
             steps {
                 script {
