@@ -30,7 +30,7 @@ pipeline {
                 script {
                     
                     sshCommand remote: remote, command: '''
-                        # Verify and create the api_SPCAT folder 
+                        # Verify and create the api_SPCAT folder if it does not exist and the virtual environment
                         if [ ! -d api_SPCAT ]; then
                             mkdir ./webapp_SPCAT
                             cd ./webapp_SPCAT
@@ -53,9 +53,9 @@ pipeline {
                     '''
                 }
             }
-        }
+        } */
         
-        stage('Backup previous files') {
+        /* stage('Backup previous files') {
             steps {
                 script {
                     sshCommand remote: remote, command: '''
@@ -68,8 +68,8 @@ pipeline {
                     '''
                 }
             }
-        }
-        
+        } */
+        /* 
         stage('Download latest release') {
             steps {
                 script {
@@ -84,8 +84,8 @@ pipeline {
                 }
             }
         }
-        
-        stage('Update dependencies') {
+         */
+        /* stage('Update dependencies') {
             steps {
                 script {
                     sshCommand remote: remote, command: '''
@@ -99,9 +99,9 @@ pipeline {
                     '''
                 }
             }
-        }
+        } */
         
-        stage('Start API') {
+        /* stage('Start API') {
             steps {
                 script {
                     def port = port_api
@@ -129,7 +129,7 @@ pipeline {
                     '''
                 }
             }
-        }
+        } */
     }
 
     /* post {
@@ -151,4 +151,4 @@ pipeline {
             }
         }
     } */
-} 
+}
