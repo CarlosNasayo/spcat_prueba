@@ -31,7 +31,7 @@ pipeline {
                     
                     sshCommand remote: remote, command: '''
                         # Verify and create the api_SPCAT folder if it does not exist and the virtual environment
-                        if [ ! -d api_SPCAT ]; then
+                        if [ ! -d webapp_SPCAT ]; then
                             mkdir ./webapp_SPCAT
                             cd ./webapp_SPCAT
                         fi
