@@ -76,9 +76,8 @@ pipeline {
                     sshCommand remote: remote, command: '''
                         # Download the latest release from GitHub
                         cd ./webapp_SPCAT
-                        rm -rf releaseApi.zip
                         curl -LOk https://github.com/CarlosNasayo/spcat_prueba/releases/latest/download/releaseFront.zip
-                        unzip releaseApi.zip
+                        unzip releaseFront.zip
                     '''
                 }
             }
