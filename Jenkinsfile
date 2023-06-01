@@ -30,7 +30,7 @@ pipeline {
                 script {
                     
                     sshCommand remote: remote, command: '''
-                        # Verify and create the api_SPCAT folder if it does not exist and the virtual environment
+                        # Verify and create the api_SPCAT folder if it does not exist
                         if [ ! -d webapp_SPCAT ]; then
                             mkdir ./webapp_SPCAT
                             cd ./webapp_SPCAT
@@ -76,8 +76,12 @@ pipeline {
                     sshCommand remote: remote, command: '''
                         # Download the latest release from GitHub
                         cd ./webapp_SPCAT
+                        rm -rf build
+                        if [ ! -d build ]; then
+                            mkdir ./build
+                        fi
                         curl -LOk https://github.com/CarlosNasayo/spcat_prueba/releases/latest/download/releaseFront.zip
-                        unzip releaseFront.zip
+                        unzip releaseFront.zip -d build
                     '''
                 }
             }
