@@ -82,7 +82,7 @@ pipeline {
                         fi
                         curl -LOk https://github.com/CarlosNasayo/spcat_prueba/releases/latest/download/releaseFront.zip
                         unzip releaseFront.zip -d build
-                        rm -r build releaseFront.zip
+                        rm -r  releaseFront.zip
                     '''
                 }
             }
