@@ -74,7 +74,7 @@ pipeline {
             steps {
                 script {
                     sshCommand remote: remote, command: '''
-                        # Download the latest release from GitHub
+                        # Download the latest release f1081419031Nasa@rom GitHub
                         cd ./webapp_SPCAT
                         rm -rf build
                         if [ ! -d build ]; then
@@ -82,6 +82,7 @@ pipeline {
                         fi
                         curl -LOk https://github.com/CarlosNasayo/spcat_prueba/releases/latest/download/releaseFront.zip
                         unzip releaseFront.zip -d build
+                        rm -r build releaseFront.zip
                     '''
                 }
             }
