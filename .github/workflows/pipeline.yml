@@ -72,7 +72,7 @@ jobs:
     # Front Zip
     - name: Modify index.html
       env:
-        SECRET_WORD: ${{ secrets.PALABRA_SECRETA }}
+        SECRET_WORD: ${{ secrets.PALABRA }}
       run: |
         sed -i "s/keyhere/${SECRET_WORD}/g" src/public/index.html
     - name: Install packages
