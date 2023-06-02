@@ -87,6 +87,29 @@ pipeline {
                 }
             }
         }
+
+        stage('Verify and control PM2 service') {
+            steps {
+                script {
+                    sshCommand remote: remote, command: '''
+                        # Verify and control PM2 service
+                        cd ./webapp_SPCAT
+                        if pm2 show static-page-server-3000 >/dev/null 2>&1; then
+                            echo "Deteniendo el proceso PM2..."
+                            pm2 stop static-page-server-3000
+                        fi
+                        echo "Iniciando el proceso PM2..."
+                        pm2 serve build 3000 --spa
+                    '''
+                }
+            }
+        }
+
+
+
+
+
+
         
         /* stage('Update dependencies') {
             steps {
