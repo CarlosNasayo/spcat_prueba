@@ -69,12 +69,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 18
-    # Front Zip
-    - name: Modify index.html
-      env:
-        SECRET_WORD: ${{ secrets.PALABRA }}
-      run: |
-        sed -i "s/keyhere/${SECRET_WORD}/g" src/public/index.html
+    # Front Zipgit
     - name: Install packages
       run: |
           cd ./src
