@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-        stage('Verify Api folder and environment') {
+        stage('Verify webapp folder and environment') {
             steps {
                 script {
                     
