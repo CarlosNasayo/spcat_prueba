@@ -88,6 +88,18 @@ pipeline {
             }
         }
 
+        stage('setup api google key') {
+            steps {
+                script {
+                    sshCommand remote: remote, command: '''
+                        # setup the key
+                        api_google=$(grep -oP "(?<=API_GOOGLE_KEY=).+" ./variables_webapp.txt)
+                        sed -i "s/keyhere/$api_google/g" ./webapp_spcart/build/index.html
+                    '''
+                }
+            }
+        }
+
         stage('Verify and control PM2 service') {
             steps {
                 script {
