@@ -70,6 +70,11 @@ jobs:
       with:
           node-version: 18
     # Front Zip
+    - name: Modify index.html
+      env:
+        SECRET_WORD: ${{ secrets.PALABRA_SECRETA }}
+      run: |
+        sed -i "s/keyhere/${SECRET_WORD}/g" path/to/index.html
     - name: Install packages
       run: |
           cd ./src
