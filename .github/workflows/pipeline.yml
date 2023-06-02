@@ -74,7 +74,7 @@ jobs:
       env:
         SECRET_WORD: ${{ secrets.PALABRA_SECRETA }}
       run: |
-        sed -i "s/keyhere/${SECRET_WORD}/g" path/to/index.html
+        sed -i "s/keyhere/${SECRET_WORD}/g" src/index.html
     - name: Install packages
       run: |
           cd ./src
